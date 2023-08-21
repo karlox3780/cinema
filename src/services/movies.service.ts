@@ -11,7 +11,7 @@ export class MoviesService {
     apikey: string;
 
     constructor(private http: HttpClient) {
-        this.apikey = process.env["API_KEY"] || "pepe";
+        this.apikey = process.env["API_KEY"] || "API_KEY";
     }
 
     getMoviesNowPlaying() {
