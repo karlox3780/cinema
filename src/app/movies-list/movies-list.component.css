@@ -1,0 +1,15 @@
+.movies-title {
+    text-align: center;
+}
+
+.movies-list img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.movies-list a {
+    color: black;
+    text-decoration: none;
+}
