@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,7 @@ export class MoviesService {
     apikey: string;
 
     constructor(private http: HttpClient) {
-        this.apikey = process.env["API_KEY"] || "API_KEY";
+        this.apikey = environment.api_key;
     }
 
     getMoviesNowPlaying() {
