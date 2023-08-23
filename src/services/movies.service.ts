@@ -16,15 +16,15 @@ export class MoviesService {
     }
 
     getMoviesNowPlaying() {
-        return this.http.get<any>(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apikey}`)
+        return this.http.get<any>(`https://api.themoviedb.org/3/movie/now_playing?language=es-ES&api_key=${this.apikey}`)
     }
     getPopularMovies() {
-        return this.http.get<any>(`https://api.themoviedb.org/3/movie/popular?api_key=${this.apikey}`)
+        return this.http.get<any>(`https://api.themoviedb.org/3/movie/popular?language=es-ES&api_key=${this.apikey}`)
     }
     getCreditsMovie(movie_id: number) {
-        return this.http.get<any>(`https://api.themoviedb.org/3/movie/` + movie_id + `/credits?api_key=${this.apikey}`)
+        return this.http.get<any>(`https://api.themoviedb.org/3/movie/` + movie_id + `/credits?language=es-ES&api_key=${this.apikey}`)
     }
     getMovieDetails(movie_id: number) {
-        return this.http.get<any>(`https://api.themoviedb.org/3/movie/` + movie_id + `?api_key=${this.apikey}`)
+        return this.http.get<any>(`https://api.themoviedb.org/3/movie/` + movie_id + `?language=es-ES&api_key=${this.apikey}`)
     }
 }

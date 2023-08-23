@@ -53,7 +53,7 @@
                 <a [routerLink]="'/movie/' + movie.id">
                     <img loading="lazy" [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path"
                         onError="this.src='https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'" />
-                    <p>{{movie.original_title}}</p>
+                    <p>{{movie.title}}</p>
                 </a>
             </span>
         </div>
@@ -68,7 +68,7 @@
                 <a [routerLink]="'/movie/' + movie.id">
                     <img loading="lazy" [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path"
                         onError="this.src='https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'" />
-                    <p>{{movie.original_title}}</p>
+                    <p>{{movie.title}}</p>
                 </a>
             </span>
         </div>
