@@ -1,50 +1,32 @@
-<div id="default-carousel" class="relative w-full" data-carousel="slide" *ngIf="moviesNowPalying!=null">
-    <!-- Carousel wrapper -->
-    <div class="relative h-[65vh] overflow-hidden">
-        <div class="hidden duration-700 ease-in-out" *ngFor="let movie of moviesNowPalying" data-carousel-item>
+<div id="carouselExampleCaptions" class="relative" data-te-carousel-init data-te-ride="carousel">
+    <!--Carousel items-->
+    <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+        <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            data-te-carousel-active data-te-carousel-item style="backface-visibility: hidden">
+            <img src="https://img3.wallspic.com/crops/5/3/8/6/5/156835/156835-wallpapoers_de_cine-cine-teatro-karikaalan-multicines-1920x1080.jpg"
+                class="block w-full h-[65vh] object-cover" alt="..." />
+            <div
+                class="absolute flex items-center justify-center h-[100%] inset-x-[15%] bottom-0 py-5 text-center text-white">
+                <h5 class="text-xl">CINEMA</h5>
+            </div>
+        </div>
+
+        <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            data-te-carousel-item style="backface-visibility: hidden"
+            *ngFor="let movie of moviesNowPalying; let i = index">
             <a [routerLink]="'/movie/' + movie.id">
-                <img class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" loading="lazy"
+                <img class="block w-full h-[65vh] object-cover" loading="lazy"
                     [src]="'https://image.tmdb.org/t/p/original'+movie.backdrop_path"
                     onError="this.src='https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'" />
-                <p>{{movie.original_title}}</p>
+                <div
+                    class="absolute flex items-center justify-center h-[100%] inset-x-[15%] bottom-0 py-5 text-center text-white">
+                    <p>{{movie.title}}</p>
+                </div>
             </a>
         </div>
     </div>
-    <!-- Slider indicators -->
-    <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-        <span class="w-3 h-3" *ngFor="let movie of moviesNowPalying">
-            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" data-carousel-slide-to="1"
-                aria-label="Slide 1"></button>
-        </span>
-    </div>
-    <!-- Slider controls -->
-    <button type=" button"
-        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-prev>
-        <span
-            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M5 1 1 5l4 4" />
-            </svg>
-            <span class="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button"
-        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-        data-carousel-next>
-        <span
-            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="m1 9 4-4-4-4" />
-            </svg>
-            <span class="sr-only">Next</span>
-        </span>
-    </button>
 </div>
+
 <h1 class="movies-title">Peliculas de cartelera</h1>
 <div *ngIf="moviesNowPalying!=null">
     <div class="movies-list mr-[10px] ml-[10px]">

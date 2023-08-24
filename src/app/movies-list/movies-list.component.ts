@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MoviesService } from '../../services/movies.service';
+import { Carousel, Dropdown, initTE } from 'tw-elements';
 
 @Component({
   selector: 'app-movies-list',
@@ -15,6 +16,9 @@ export class MoviesListComponent {
   constructor(public moviesService: MoviesService, private modalService: NgbModal) { }
 
   ngOnInit() {
+
+    initTE({ Carousel, Dropdown });
+
     this.moviesService.getMoviesNowPlaying().subscribe({
       next: data => {
         this.moviesNowPalying = data.results;
