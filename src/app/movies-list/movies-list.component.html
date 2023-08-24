@@ -47,24 +47,24 @@
 </div>
 <h1 class="movies-title">Peliculas de cartelera</h1>
 <div *ngIf="moviesNowPalying!=null">
-    <div class="movies-list container-fluid">
-        <div class="row">
-            <span class="col-sm-12 col-md-4 col-lg-1" *ngFor="let movie of moviesNowPalying">
+    <div class="movies-list mr-[10px] ml-[10px]">
+        <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
+            <div class="" *ngFor="let movie of moviesNowPalying">
                 <a [routerLink]="'/movie/' + movie.id">
                     <img loading="lazy" [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path"
                         onError="this.src='https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'" />
                     <p>{{movie.title}}</p>
                 </a>
-            </span>
+            </div>
         </div>
     </div>
 </div>
 
 <h1 class="movies-title">Peliculas populares</h1>
 <div *ngIf="moviesNowPalying!=null">
-    <div class="movies-list container-fluid">
-        <div class="row">
-            <span class="col-sm-12 col-md-4 col-lg-1" *ngFor="let movie of popularMovies">
+    <div class="movies-list mr-[10px] ml-[10px]">
+        <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
+            <span class="" *ngFor="let movie of popularMovies">
                 <a [routerLink]="'/movie/' + movie.id">
                     <img loading="lazy" [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path"
                         onError="this.src='https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'" />
