@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MoviesService } from '../../services/movies.service';
 
@@ -15,7 +15,6 @@ export class MoviesListComponent {
   constructor(public moviesService: MoviesService, private modalService: NgbModal) { }
 
   ngOnInit() {
-
     this.moviesService.getMoviesNowPlaying().subscribe({
       next: data => {
         this.moviesNowPalying = data.results;
