@@ -1,19 +1,8 @@
-<div id="carouselExampleCaptions" class="relative" data-te-carousel-init data-te-ride="carousel">
-    <!--Carousel items-->
-    <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-        <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-            data-te-carousel-active data-te-carousel-item style="backface-visibility: hidden">
-            <img src="https://img3.wallspic.com/crops/5/3/8/6/5/156835/156835-wallpapoers_de_cine-cine-teatro-karikaalan-multicines-1920x1080.jpg"
-                class="block w-full h-[65vh] object-cover" alt="..." />
-            <div
-                class="absolute flex items-center justify-center h-[100%] inset-x-[15%] bottom-0 py-5 text-center text-white">
-                <h5 class="text-xl">CINEMA</h5>
-            </div>
-        </div>
-
-        <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-            data-te-carousel-item style="backface-visibility: hidden"
-            *ngFor="let movie of moviesNowPalying; let i = index">
+<div id="carouselCinema" class="relative w-full" data-carousel="slide" *ngIf="moviesNowPalying!=null">
+    <!-- Carousel wrapper -->
+    <div class="relative h-[65vh] overflow-hidden">
+        <div [attr.data-carousel-item]="isFirst ? 'active' : ''" class="hidden duration-1000 ease-in-out"
+            *ngFor="let movie of moviesNowPalying; let i = index;first as isFirst" data-carousel-item>
             <a [routerLink]="'/movie/' + movie.id">
                 <img class="block w-full h-[65vh] object-cover" loading="lazy"
                     [src]="'https://image.tmdb.org/t/p/original'+movie.backdrop_path"
@@ -26,7 +15,6 @@
         </div>
     </div>
 </div>
-
 <h1 class="movies-title">Peliculas de cartelera</h1>
 <div *ngIf="moviesNowPalying!=null">
     <div class="movies-list mr-[10px] ml-[10px]">
