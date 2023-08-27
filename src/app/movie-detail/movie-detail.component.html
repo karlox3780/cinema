@@ -18,7 +18,7 @@
             <div class="row">
                 <span class="col-sm-12 col-md-4 col-lg-1" *ngFor="let cast of creditsMovie">
                     <img loading="lazy" [src]="'https://image.tmdb.org/t/p/w500/'+cast.profile_path"
-                        onError="this.src='https://us.123rf.com/450wm/dxinerz/dxinerz1507/dxinerz150701146/42288091-contacto-tel%C3%A9fono-imagen-de-vector-de-icono-de-llamada-tambi%C3%A9n-se-puede-usar-para-aplicaciones.jpg?ver=6'" />
+                        onError="this.src='../../assets/images/cast_image.png'" />
                     <p>{{cast.original_name}}</p>
                 </span>
             </div>

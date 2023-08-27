@@ -1,4 +1,4 @@
-<ngb-carousel *ngIf="moviesNowPalying!=null">
+<ngb-carousel class="movies-list-carousel" *ngIf="moviesNowPalying!=null">
     <ng-template ngbSlide *ngFor="let movie of moviesNowPalying">
         <a [routerLink]="'/movie/' + movie.id">
             <img class="block w-full h-[65vh] object-cover" loading="lazy"

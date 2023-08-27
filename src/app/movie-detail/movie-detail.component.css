@@ -45,4 +45,6 @@
     border-radius: 20px;
     margin-bottom: 12px;
     margin-top: 12px;
+    min-height: 202px;
+    object-fit: cover;
 }
