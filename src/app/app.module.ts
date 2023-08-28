@@ -8,12 +8,14 @@ import { MoviesService } from 'src/services/movies.service';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieDetailComponent,
-    MoviesListComponent
+    MoviesListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

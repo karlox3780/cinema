@@ -1,17 +1,19 @@
 <ngb-carousel class="movies-list-carousel" *ngIf="moviesNowPalying!=null">
     <ng-template ngbSlide *ngFor="let movie of moviesNowPalying">
-        <a [routerLink]="'/movie/' + movie.id">
-            <img class="block w-full h-[65vh] object-cover" loading="lazy"
-                [src]="'https://image.tmdb.org/t/p/original'+movie.backdrop_path"
-                onError="this.src='https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'" />
+        <a class="movies-link" [routerLink]="'/movie/' + movie.id">
+            <div class="movies-background-image">
+                <img class=" block w-full h-[65vh] object-cover" loading="lazy"
+                    [src]="'https://image.tmdb.org/t/p/original'+movie.backdrop_path"
+                    onError="this.src='https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'" />
+            </div>
             <div
                 class="absolute flex items-center justify-center h-[100%] inset-x-[15%] bottom-0 py-5 text-center text-white">
-                <p>{{movie.title}}</p>
+                <h1 class="uppercase text-[60px]">{{movie.title}}</h1>
             </div>
         </a>
     </ng-template>
 </ngb-carousel>
-<h1 class="movies-title">Peliculas de cartelera</h1>
+<h1 class="movies-title text-[30px] mt-[10px]">Peliculas de cartelera</h1>
 <div *ngIf="moviesNowPalying!=null">
     <div class="movies-list mr-[10px] ml-[10px]">
         <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
@@ -26,7 +28,7 @@
     </div>
 </div>
 
-<h1 class="movies-title">Peliculas populares</h1>
+<h1 class="movies-title text-[30px] mt-[10px]">Peliculas populares</h1>
 <div *ngIf="moviesNowPalying!=null">
     <div class="movies-list mr-[10px] ml-[10px]">
         <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">

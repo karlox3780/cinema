@@ -1,9 +1,9 @@
 <div *ngIf="creditsMovie!=null">
     <figure class="movie-title">
         <a routerLink="/movies">
-            <button mat-raised-button>Volver</button>
+            <button class="p-[4px]" mat-raised-button>Volver</button>
         </a>
-        <img [src]="'https://image.tmdb.org/t/p/original'+movieDetails?.poster_path" alt="" />
+        <img [src]="'https://image.tmdb.org/t/p/original'+movieDetails?.backdrop_path" alt="" />
         <figcaption>{{movieDetails?.original_title}}</figcaption>
     </figure>
 
@@ -16,11 +16,14 @@
     <div *ngIf="creditsMovie!=null">
         <div class="cast-list container-fluid">
             <div class="row">
-                <span class="col-sm-12 col-md-4 col-lg-1" *ngFor="let cast of creditsMovie">
-                    <img loading="lazy" [src]="'https://image.tmdb.org/t/p/w500/'+cast.profile_path"
-                        onError="this.src='../../assets/images/cast_image.png'" />
-                    <p>{{cast.original_name}}</p>
-                </span>
+                <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
+                    <span *ngFor="let cast of creditsMovie">
+
+                        <img loading="lazy" [src]="'https://image.tmdb.org/t/p/w500/'+cast.profile_path"
+                            onError="this.src='../../assets/images/cast_image.png'" />
+                        <p>{{cast.original_name}}</p>
+                    </span>
+                </div>
             </div>
         </div>
     </div>

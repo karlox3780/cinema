@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: Threater;
+    src: url(./assets/fonts/theater.otf);
+    font-weight: normal;
+}
+
+body {
+    font-family: "Threater";
+    font-size: 24px;
+}
+
 /* Movies List Page*/
 .movies-list-carousel .carousel-control-prev,
 .movies-list-carousel .carousel-control-next,
