@@ -11,27 +11,27 @@ export class MoviesListComponent {
   errorMessage = "";
   moviesNowPalying: any;
   popularMovies: any;
+  loadingCarousel: boolean;
+  loadingNowPLaying: boolean;
+  loadingPopular: boolean;
 
-  imageLoader = true;
+  constructor(public moviesService: MoviesService, private modalService: NgbModal) {
+    this.loadingCarousel = true;
+    this.loadingNowPLaying = true;
+    this.loadingPopular = true;
+  }
 
-  // loadingCarousel: boolean = true
-  // loadingNowPLaying: boolean = true
-  // loadingPopular: boolean = true
-
-  // onLoadCarousel() {
-  //   this.loadingCarousel = false;
-  // }
-  // onLoadNowPlaying() {
-  //   this.loadingNowPLaying = false;
-  // }
-  // onLoadPopular() {
-  //   this.loadingPopular = false;
-  // }
-
-  constructor(public moviesService: MoviesService, private modalService: NgbModal) { }
+  onLoadCarousel() {
+    this.loadingCarousel = false;
+  }
+  onLoadNowPlaying() {
+    this.loadingNowPLaying = false;
+  }
+  onLoadPopular() {
+    this.loadingPopular = false;
+  }
 
   ngOnInit() {
-
     this.moviesService.getMoviesNowPlaying().subscribe({
       next: data => {
         this.moviesNowPalying = data.results;

@@ -2,19 +2,6 @@
     text-align: center;
 }
 
-.movies-list img,
-.movies-list .loading {
-    width: 100%;
-    border-radius: 20px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-}
-
-.movies-list .loading,
-.movies-background-image .loading {
-    background-color: rgba(0, 0, 0, 0.25);
-}
-
 .movies-list a {
     color: black;
     text-decoration: none;

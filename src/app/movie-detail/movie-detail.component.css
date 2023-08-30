@@ -2,12 +2,6 @@
     position: relative;
 }
 
-.movie-title img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-
 .movie-title figcaption {
     position: absolute;
     text-align: center;
@@ -42,13 +36,4 @@
 
 .cast-title {
     text-align: center;
-}
-
-.cast-list img {
-    width: 100%;
-    border-radius: 20px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    min-height: 202px;
-    object-fit: cover;
 }

@@ -19,3 +19,38 @@ body {
 .movies-list-carousel .carousel-indicators {
     display: none;
 }
+
+.movies-list .loading,
+.movies-background-image .loading {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.movies-list img,
+.movies-list .loading {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+/* Movies Detail Page*/
+.cast-list img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    min-height: 250px;
+    object-fit: cover;
+}
+
+.cast-list .loading {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.movie-title .loading,
+.cast-list .loading {
+    background-color: rgba(0, 0, 0, 0.5);
+}

@@ -2,11 +2,12 @@
     <ng-template ngbSlide *ngFor="let movie of moviesNowPalying">
         <a class="movies-link" [routerLink]="'/movie/' + movie.id">
             <div class="movies-background-image">
-                <div class="loading animate-pulse block w-full h-[65vh] object-cover" [hidden]="!imageLoader"></div>
-                <img [hidden]="imageLoader" (load)="this.imageLoader = false;"
-                    class="block w-full h-[65vh] object-cover"
-                    [src]="'https://image.tmdb.org/t/p/original'+movie.backdrop_path"
-                    onError="this.src='https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'" />
+                <app-image-with-loading class="image-with-loading"
+                    [loadClass]="'loading animate-pulse block w-full h-[65vh] object-cover'"
+                    [class]="'block w-full h-[65vh] object-cover'"
+                    [image]="'https://image.tmdb.org/t/p/original'+movie.backdrop_path"
+                    [error]="'this.src=https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'">
+                </app-image-with-loading>
             </div>
             <div
                 class="absolute flex items-center justify-center h-[100%] inset-x-[15%] bottom-0 py-5 text-center text-white">
@@ -21,10 +22,10 @@
         <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
             <div class="" *ngFor="let movie of moviesNowPalying">
                 <a [routerLink]="'/movie/' + movie.id">
-                    <div class="loading animate-pulse min-h-[250px]" [hidden]="!imageLoader"></div>
-                    <img [hidden]="imageLoader" (load)="this.imageLoader = false;"
-                        [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path"
-                        onError="this.src='https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'" />
+                    <app-image-with-loading class="image-with-loading"
+                        [loadClass]="'loading animate-pulse min-h-[250px]'"
+                        [image]="'https://image.tmdb.org/t/p/w500'+movie.poster_path"
+                        [error]="'this.src=https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'"></app-image-with-loading>
                     <p>{{movie.title}}</p>
                 </a>
             </div>
@@ -38,10 +39,11 @@
         <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
             <span class="" *ngFor="let movie of popularMovies">
                 <a [routerLink]="'/movie/' + movie.id">
-                    <div class="loading animate-pulse min-h-[250px]" [hidden]="!imageLoader"></div>
-                    <img [hidden]="imageLoader" (load)="this.imageLoader = false;"
-                        [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path"
-                        onError="this.src='https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'" />
+                    <app-image-with-loading class="image-with-loading"
+                        [loadClass]="'loading animate-pulse min-h-[250px]'"
+                        [image]="'https://image.tmdb.org/t/p/w500'+movie.poster_path"
+                        [error]="'this.src=https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'">
+                    </app-image-with-loading>
                     <p>{{movie.title}}</p>
                 </a>
             </span>

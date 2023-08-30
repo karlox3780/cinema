@@ -1,0 +1,3 @@
+<div [class]=loadClass *ngIf="isLoading"></div>
+<img [class]=class [src]=image [ngStyle]="{display:isLoading?'none':'block'}" (load)="hideLoader()"
+    (error)="onImgError($event)" />
