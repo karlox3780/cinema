@@ -20,7 +20,7 @@
 <div *ngIf="moviesNowPalying!=null">
     <div class="movies-list mr-[10px] ml-[10px]">
         <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
-            <div class="" *ngFor="let movie of moviesNowPalying">
+            <div class="hover:translate-y-[-20px] duration-200" *ngFor="let movie of moviesNowPalying">
                 <a [routerLink]="'/movie/' + movie.id">
                     <app-image-with-loading class="image-with-loading"
                         [loadClass]="'loading animate-pulse min-h-[250px]'"
@@ -37,7 +37,7 @@
 <div *ngIf="moviesNowPalying!=null">
     <div class="movies-list mr-[10px] ml-[10px]">
         <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
-            <span class="" *ngFor="let movie of popularMovies">
+            <div class="hover:translate-y-[-20px] duration-200" *ngFor="let movie of popularMovies">
                 <a [routerLink]="'/movie/' + movie.id">
                     <app-image-with-loading class="image-with-loading"
                         [loadClass]="'loading animate-pulse min-h-[250px]'"
@@ -46,7 +46,7 @@
                     </app-image-with-loading>
                     <p>{{movie.title}}</p>
                 </a>
-            </span>
+            </div>
         </div>
     </div>
 </div>
