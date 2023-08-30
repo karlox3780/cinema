@@ -11,25 +11,8 @@ export class MoviesListComponent {
   errorMessage = "";
   moviesNowPalying: any;
   popularMovies: any;
-  loadingCarousel: boolean;
-  loadingNowPLaying: boolean;
-  loadingPopular: boolean;
 
-  constructor(public moviesService: MoviesService, private modalService: NgbModal) {
-    this.loadingCarousel = true;
-    this.loadingNowPLaying = true;
-    this.loadingPopular = true;
-  }
-
-  onLoadCarousel() {
-    this.loadingCarousel = false;
-  }
-  onLoadNowPlaying() {
-    this.loadingNowPLaying = false;
-  }
-  onLoadPopular() {
-    this.loadingPopular = false;
-  }
+  constructor(public moviesService: MoviesService, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.moviesService.getMoviesNowPlaying().subscribe({
