@@ -4,8 +4,7 @@
             <button class="p-[4px]" mat-raised-button>Volver</button>
         </a>
         <app-image-with-loading class="image-with-loading"
-            [loadClass]="'loading animate-pulse w-full h-[400px] object-cover'"
-            [class]="'w-full h-[400px] object-cover'"
+            [loadClass]="'loading animate-pulse w-full h-[50vh] object-cover'" [class]="'w-full h-[50vh] object-cover'"
             [image]="'https://image.tmdb.org/t/p/original'+movieDetails?.backdrop_path"
             [error]="'this.src=https://cdn.icon-icons.com/icons2/2632/PNG/512/movies_icon_159164.png'"></app-image-with-loading>
         <figcaption>{{movieDetails?.original_title}}</figcaption>
