@@ -27,4 +27,7 @@ export class MoviesService {
     getMovieDetails(movie_id: number) {
         return this.http.get<any>(`https://api.themoviedb.org/3/movie/` + movie_id + `?language=es-ES&api_key=${this.apikey}`)
     }
+    getMovieSearch(movie_name: string) {
+        return this.http.get<any>(`https://api.themoviedb.org/3/movie/?query=` + movie_name + `&language=es-ES&api_key=${this.apikey}`)
+    }
 }
