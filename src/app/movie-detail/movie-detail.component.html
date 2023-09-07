@@ -1,8 +1,8 @@
 <div *ngIf="creditsMovie!=null">
     <figure class="movie-title">
-        <a routerLink="/movies">
-            <button class="p-[4px]" mat-raised-button>Volver</button>
-        </a>
+        
+            <button (click)="onBack()" class="p-[4px]" mat-raised-button>Volver</button>
+        
         <app-image-with-loading class="image-with-loading"
             [loadClass]="'loading animate-pulse w-full h-[50vh] object-cover'" [class]="'w-full h-[50vh] object-cover'"
             [image]="'https://image.tmdb.org/t/p/original'+movieDetails?.backdrop_path"

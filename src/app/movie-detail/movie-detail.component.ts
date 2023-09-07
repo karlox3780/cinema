@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/services/movies.service';
+import { NavigationService } from 'src/services/navigation.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -14,7 +15,14 @@ export class MovieDetailComponent {
   creditsMovie: any;
   movieDetails: any;
 
-  constructor(private modalService: NgbModal, public moviesService: MoviesService, private route: ActivatedRoute) { }
+  constructor(private readonly navigationService: NavigationService,
+    private modalService: NgbModal,
+    public moviesService: MoviesService,
+    private route: ActivatedRoute) { }
+
+  public onBack(): void {
+    this.navigationService.back();
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');

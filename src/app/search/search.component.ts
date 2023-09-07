@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-search',
@@ -6,5 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
+  errorMessage = "";
+  moviesSearch: any;
+
+  constructor(public moviesService: MoviesService) { }
+
+  public searchMovie(movie: string) {
+    this.moviesService.getMovieSearch(movie).subscribe({
+      next: data => {
+        this.moviesSearch = data.results;
+        console.log(data.results);
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', error);
+      }
+    });
+  }
 
 }

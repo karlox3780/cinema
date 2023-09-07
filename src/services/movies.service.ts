@@ -28,6 +28,6 @@ export class MoviesService {
         return this.http.get<any>(`https://api.themoviedb.org/3/movie/` + movie_id + `?language=es-ES&api_key=${this.apikey}`)
     }
     getMovieSearch(movie_name: string) {
-        return this.http.get<any>(`https://api.themoviedb.org/3/movie/?query=` + movie_name + `&language=es-ES&api_key=${this.apikey}`)
+        return this.http.get<any>(`https://api.themoviedb.org/3/search/movie?query=` + movie_name + `&include_adult=false&language=es-ES&page=1&api_key=${this.apikey}`)
     }
 }
