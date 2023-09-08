@@ -1,9 +1,9 @@
-<div>
-    <form class="form-inline my-2 my-lg-0" (submit)="false">
-        <input class="form-control mr-sm-2" type="text" placeholder="Buscar héroe" #movie
+<div class="w-[100vw] flex flex-col items-center">
+    <form class="form-inline my-[10px] w-[50%]" (submit)="false">
+        <input class="form-control mr-sm-2" type="text" placeholder="Buscar Película" #movie
             (keyup)="searchMovie(movie.value)">
     </form>
-    <div *ngIf="moviesSearch!=null">
+    <div class="w-[100%]" *ngIf="moviesSearch!=null">
         <div class="movies-list mr-[10px] ml-[10px]">
             <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
                 <div class="hover:translate-y-[-20px] duration-200" *ngFor="let movie of moviesSearch">
@@ -17,5 +17,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="w-[50%] text-center" *ngIf="moviesSearch==null || moviesSearch.length==0">
+        <h1>No se han encontrado películas.</h1>
     </div>
 </div>
