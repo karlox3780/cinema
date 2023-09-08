@@ -15,13 +15,13 @@ export class MovieDetailComponent {
   creditsMovie: any;
   movieDetails: any;
 
-  constructor(private readonly navigationService: NavigationService,
+  constructor(private navigation: NavigationService,
     private modalService: NgbModal,
     public moviesService: MoviesService,
     private route: ActivatedRoute) { }
 
   public onBack(): void {
-    this.navigationService.back();
+    this.navigation.back();
   }
 
   ngOnInit(): void {

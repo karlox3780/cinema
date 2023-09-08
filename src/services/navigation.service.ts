@@ -1,36 +1,24 @@
 import { Injectable } from "@angular/core";
-import { Router, RoutesRecognized } from "@angular/router";
-import { filter, map, pairwise } from "rxjs";
-import { Location } from '@angular/common';
+import { Location } from "@angular/common";
+import { Router, NavigationEnd } from "@angular/router";
 
-const HOME_URL = "/movies";
-
-@Injectable({
-    providedIn: "root",
-})
+@Injectable({ providedIn: "root" })
 export class NavigationService {
-    private previousUrl?: string;
+    private history: string[] = [];
 
-    constructor(
-        private readonly router: Router,
-        private readonly location: Location
-    ) {
-        this.router.events
-            .pipe(
-                filter((event) => event instanceof RoutesRecognized),
-                map((event) => event as RoutesRecognized),
-                pairwise()
-            )
-            .subscribe((events: [RoutesRecognized, RoutesRecognized]) => {
-                this.previousUrl = events[0].urlAfterRedirects;
-            });
+    constructor(private router: Router, private location: Location) {
+        this.router.events.subscribe((event) => {
+            if (event instanceof NavigationEnd) {
+                this.history.push(event.urlAfterRedirects);
+            }
+        });
     }
 
-    public back(): void {
-        if (this.previousUrl !== undefined) {
+    back(): void {
+        if (this.history.length > 0) {
             this.location.back();
         } else {
-            this.router.navigate([HOME_URL], { replaceUrl: true });
+            this.router.navigateByUrl("/");
         }
     }
 }

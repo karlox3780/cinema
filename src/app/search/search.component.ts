@@ -16,7 +16,6 @@ export class SearchComponent {
     this.moviesService.getMovieSearch(movie).subscribe({
       next: data => {
         this.moviesSearch = data.results;
-        console.log(data.results);
       },
       error: error => {
         this.errorMessage = error.message;
