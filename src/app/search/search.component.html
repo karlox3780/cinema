@@ -1,13 +1,15 @@
-<div class="w-[100vw] flex flex-col items-center">
-    <form class="form-inline my-[10px] w-[50%]" (submit)="false">
-        <input class="form-control mr-sm-2" type="text" placeholder="Buscar Película" #movie
-            (keyup)="searchMovie(movie.value)">
+<div class="w-[100%] flex flex-col items-center">
+    <form class="my-[10px] w-[50%]" (submit)="false">
+        <input
+            class="w-[100%] py-[5px] px-[10px] text-[18px] border border-black rounded mr-sm-2 focus:outline-[#b13329]"
+            type="text" placeholder="Buscar Película" #movie (keyup)="searchMovie(movie.value,1,'
+            keyup')">
     </form>
-    <div class="w-[100%]" *ngIf="moviesSearch!=null">
+    <div class="w-[100%]" *ngIf="moviesSearch!=null || moviesSearch.length===0">
         <div class="movies-list mr-[10px] ml-[10px]">
             <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
                 <div class="hover:translate-y-[-20px] duration-200" *ngFor="let movie of moviesSearch">
-                    <a [routerLink]="'/movie/' + movie.id">
+                    <a class="hover:text-black" [routerLink]="'/movie/' + movie.id">
                         <app-image-with-loading class="image-with-loading"
                             [loadClass]="'loading animate-pulse min-h-[250px]'"
                             [image]="'https://image.tmdb.org/t/p/w500'+movie.poster_path"
@@ -18,6 +20,9 @@
             </div>
         </div>
     </div>
+    <button class="mt-[10px] mb-[20px] py-[5px] px-[10px] border border-black rounded" *ngIf="moviesSearch.length>0"
+        (click)="searchMovie(movie.value,1,'showmore')">Mostrar más</button>
+
     <div class="w-[50%] text-center" *ngIf="moviesSearch==null || moviesSearch.length==0">
         <h1>No se han encontrado películas.</h1>
     </div>
