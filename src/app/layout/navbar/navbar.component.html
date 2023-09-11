@@ -14,7 +14,7 @@
         </button>
     </div>
     <div id="menu" [class]="open ? 'block':'hidden'" class="w-full flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow">
+        <div (click)="Menu()" class="text-sm lg:flex-grow">
             <a routerLink="/search"
                 class="block text-[20px] lg:inline-block lg:mt-0 mt-[10px] text-teal-200 hover:text-white mr-4">
                 Búsqueda
