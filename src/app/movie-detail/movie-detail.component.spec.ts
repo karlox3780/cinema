@@ -8,9 +8,9 @@ describe('MovieDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MovieDetailComponent ]
+      declarations: [MovieDetailComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(MovieDetailComponent);
     component = fixture.componentInstance;
