@@ -4,15 +4,14 @@ import { MoviesService } from 'src/services/movies.service';
 import { NavigationService } from 'src/services/navigation.service';
 
 @Component({
-  selector: 'app-movie-detail',
-  templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.css']
+  selector: 'app-person-detail',
+  templateUrl: './person-detail.component.html',
+  styleUrls: ['./person-detail.component.css']
 })
-export class MovieDetailComponent {
+export class PersonDetailComponent {
   id: any;
   errorMessage = "";
-  creditsMovie: any;
-  movieDetails: any;
+  personDetails: any;
 
   constructor(private navigation: NavigationService,
     public moviesService: MoviesService,
@@ -25,25 +24,15 @@ export class MovieDetailComponent {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
 
-    this.moviesService.getMovieDetails(this.id).subscribe({
+    this.moviesService.getPersonDetails(this.id).subscribe({
       next: data => {
-        this.movieDetails = data;
+        this.personDetails = data;
+        console.log(this.personDetails)
       },
       error: error => {
         this.errorMessage = error.message;
         console.error('There was an error!', error);
       }
     });
-
-    this.moviesService.getCreditsMovie(this.id).subscribe({
-      next: data => {
-        this.creditsMovie = data.cast;
-      },
-      error: error => {
-        this.errorMessage = error.message;
-        console.error('There was an error!', error);
-      }
-    });
-
   }
 }

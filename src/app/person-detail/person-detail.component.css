@@ -1,0 +1,11 @@
+.person-button {
+    width: 58px;
+    margin-top: 10px;
+    margin-left: 12px;
+    font-family: sans-serif;
+    font-size: 18px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 6px;
+}

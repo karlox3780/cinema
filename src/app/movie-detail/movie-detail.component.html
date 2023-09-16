@@ -15,21 +15,19 @@
         <p>{{movieDetails.overview}}</p>
     </div>
 
-    <h1 class="cast-title">Cast</h1>
-    <div *ngIf="creditsMovie!=null">
-        <div class="cast-list container-fluid">
-            <div class="row">
-                <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
-                    <span *ngFor="let cast of creditsMovie">
-                        <app-image-with-loading class="image-with-loading"
-                            [loadClass]="'loading animate-pulse min-h-[250px]'"
-                            [image]="'https://image.tmdb.org/t/p/w500/'+cast.profile_path"
-                            [error]="'this.src=../../assets/images/cast_image.png'">
-                        </app-image-with-loading>
-                        <p>{{cast.original_name}}</p>
-                    </span>
-                </div>
-            </div>
+    <h1 class="cast-title">Reparto</h1>
+    <div class="cast-list px-[12px]">
+        <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
+            <span class="hover:translate-y-[-20px] duration-200" *ngFor="let cast of creditsMovie">
+                <a [routerLink]="'/person/' + cast.id">
+                    <app-image-with-loading class="image-with-loading"
+                        [loadClass]="'loading animate-pulse min-h-[250px]'"
+                        [image]="'https://image.tmdb.org/t/p/w500'+cast?.profile_path"
+                        [error]="'this.src=../../assets/images/cast_image.png'">
+                    </app-image-with-loading>
+                </a>
+                <p>{{cast.original_name}}</p>
+            </span>
         </div>
     </div>
 </div>

@@ -18,7 +18,7 @@
 </ngb-carousel>
 <h1 class="movies-title text-[30px] mt-[10px]">Peliculas de estreno</h1>
 <div *ngIf="moviesNowPalying!=null">
-    <div class="movies-list mr-[10px] ml-[10px]">
+    <div class="movies-list px-[12px]">
         <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
             <div class="hover:translate-y-[-20px] duration-200" *ngFor="let movie of moviesNowPalying">
                 <a [routerLink]="'/movie/' + movie.id">
@@ -35,7 +35,7 @@
 
 <h1 class="movies-title text-[30px] mt-[10px]">Peliculas populares</h1>
 <div *ngIf="moviesNowPalying!=null">
-    <div class="movies-list mr-[10px] ml-[10px]">
+    <div class="movies-list px-[12px]">
         <div class="grid grid-cols-10 gap-4 justify-between max-xl:grid-cols-4 max-md:grid-cols-3">
             <div class="hover:translate-y-[-20px] duration-200" *ngFor="let movie of popularMovies">
                 <a [routerLink]="'/movie/' + movie.id">

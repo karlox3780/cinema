@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { ImageWithLoadingComponent } from './layout/image-with-loading/image-with-loading.component';
 import { SearchComponent } from './search/search.component';
+import { PersonDetailComponent } from './person-detail/person-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SearchComponent } from './search/search.component';
     MoviesListComponent,
     NavbarComponent,
     ImageWithLoadingComponent,
-    SearchComponent
+    SearchComponent,
+    PersonDetailComponent
   ],
   imports: [
     BrowserModule,
