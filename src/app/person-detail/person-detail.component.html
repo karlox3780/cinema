@@ -2,11 +2,12 @@
     <button (click)="onBack()" class="person-button p-[4px]" mat-raised-button>Volver</button>
     <div class="person-container flex flex-col items-center max-md:px-[12px]">
         <app-image-with-loading class=" image-with-loading"
-            [loadClass]="'loading animate-pulse w-[200px] object-cover rounded-[50%]'"
-            [class]="'w-[200px] object-cover rounded-[50%]'"
+            [loadClass]="'loading animate-pulse w-[200px] object-cover rounded-[20px]'"
+            [class]="'w-[200px] object-cover rounded-[20px]'"
             [image]="'https://image.tmdb.org/t/p/original'+personDetails?.profile_path"
-            [error]="'this.src=../../assets/images/movies_icon_background.png'"></app-image-with-loading>
-        <div class="flex flex-col items-center justify-start w-[500px] max-md:w-full max-md:px-[12px]">
+            [error]="'this.src=../../assets/images/movies_icon_background.png'">
+        </app-image-with-loading>
+        <div class="flex flex-col items-center justify-start w-[600px] max-md:w-full max-md:px-[12px]">
             <div class="w-full" *ngIf="personDetails.name!=null && personDetails.name!=''">
                 <p>Nombre:</p>
                 <p class="mb-[20px]">{{personDetails.name}}</p>
