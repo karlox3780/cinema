@@ -12,7 +12,7 @@ export class MoviesService {
     apikey: string;
 
     constructor(private http: HttpClient) {
-        this.apikey = environment.api_key;
+        this.apikey = environment.moviesApiKey;
     }
 
     getMoviesNowPlaying() {
