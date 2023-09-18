@@ -11,7 +11,7 @@ const setEnv = () => {
     });
     // `environment.ts` file structure
     const envConfigFile = `export const environment = {
-    moviesApiKey: '${process.env.API_KEY}',
+    moviesApiKey: '${process.env?.['API_KEY']}',
     appVersion: '${appVersion}',
     production: true,
   };
