@@ -1,7 +1,7 @@
 <div *ngIf="personDetails!=null">
     <button (click)="onBack()" class="person-button p-[4px]" mat-raised-button>Volver</button>
     <div class="person-container flex flex-col items-center max-md:px-[12px]">
-        <app-image-with-loading class=" image-with-loading"
+        <app-image-with-loading class="image-with-loading"
             [loadClass]="'loading animate-pulse w-[200px] object-cover rounded-[20px] min-h-[300px]'"
             [class]="'w-[200px] object-cover rounded-[20px]'"
             [image]="'https://image.tmdb.org/t/p/original'+personDetails?.profile_path"
